@@ -1,0 +1,30 @@
+<section class="list">
+  <div class="row">
+    <div
+      *ngFor="
+        let product of products
+          | categoryFilter: selectedCategories
+          | priceFilter: selectedPrices
+      "
+      class="col-lg-3 col-md-6 col-sm-6 col-xs-12 d-flex align-items-stretch card-column"
+    >
+      <a [routerLink]="['product', product.id]">
+        <div class="card border-0">
+          <img
+            [src]="product.thumbnail"
+            class="card-img-top"
+            [alt]="product.title"
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 fs-6">{{ product.title }}</h5>
+            <p class="fw-bolder fs-5">{{ product.price | formatPrice }}</p>
+            <p class="card-text">
+              {{ product.description | wordWrap: 60 }}
+            </p>
+            <a href="#" class="btn btn-outline-primary px-4 py-1"> Watch</a>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

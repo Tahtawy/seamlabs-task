@@ -1,0 +1,52 @@
+<div class="cart">
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <div class="left d-flex align-items-center">
+      <img [src]="product.thumbnail" alt="product cart image" />
+      <div class="productDescription">
+        <p class="fw-semibold mb-0">{{ product.title }}</p>
+        <p class="text-uppercase text-success mb-0">{{ product.category }}</p>
+      </div>
+    </div>
+    <div class="right d-flex justify-content-between align-items-center">
+      <div class="input-group d-flex align-items-center">
+        <span class="input-group-btn">
+          <button
+            type="button"
+            class="btn btn-number"
+            (click)="decreaseCart()"
+            [disabled]="!(cartCount > 0)"
+          >
+            <img
+              src="../../../../../assets/images/icons/minus-square.svg"
+              alt="minus icon"
+            />
+          </button>
+        </span>
+        <input
+          type="text"
+          name="quant[2]"
+          class="form-control input-number"
+          [value]="cartCount"
+          min="1"
+          max="100"
+        />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-number" (click)="increaseCart()">
+            <img
+              src="../../../../../assets/images/icons/plus-square.svg"
+              alt="plus icon"
+            />
+          </button>
+        </span>
+      </div>
+      <button
+        class="btn btn-primary text-uppercase addToCart"
+        (click)="increaseCart()"
+      >
+        add to cart
+      </button>
+    </div>
+  </div>
+</div>

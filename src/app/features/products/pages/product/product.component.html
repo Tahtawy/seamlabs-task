@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="row vh-100">
+    <div class="col-6">
+      <img class="w-100 h-100" [src]="product.thumbnail" alt="product image" />
+    </div>
+    <div class="col-6 d-flex justiy-content-center">
+      <div class="productDetails pt-5 ps-5">
+        <div class="productTitle">
+          <h1 class="h2 fw-semibold">{{ product.title }}</h1>
+          <div class="d-flex">
+            <p class="text-success text-uppercase me-2 mb-0">
+              {{ product.category }}
+            </p>
+            <div class="d-flex rate">
+              <img
+                class="me-1"
+                src="../../../../../assets/images/icons/rating-star.svg"
+                alt="rate star"
+              />
+              {{ product.rating | rate: 5 }}
+            </div>
+          </div>
+        </div>
+        <div class="productDescription">
+          <p class="fw-semibold">Description:</p>
+          <ul class="ps-4">
+            <li class="fw-light" *ngFor="let spec of productSpecs">
+              {{ spec }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-cart [product]="product"></app-cart>

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  &, &:hover {
+    color: #000;
+  }
+}
+.form-control, .btn-primary {
+  border-radius: 20px !important;
+}
+.form-control {
+  border: 2px solid rgba(0, 0, 0, 0.49);
+}
+.btn-primary {
+  background-color: #6C63FF;
+}
+.btn:disabled, .btn:active, .btn:focus {
+  border: 0 !important;
+}
