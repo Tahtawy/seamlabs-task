@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
+## Enhancments
+
+I used a regular search with o(n) in the filteration, but this can be enhanced by
+transform products from array of objects to object (map),
+and with that search will be O(1).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -20,10 +20,14 @@ export class TokenInterceptor implements HttpInterceptor {
     const token = this.localStorageService.getItem('token');
 
     if (token) {
-      request = request.clone({
-        headers: request.headers.set('Authorization', 'application/json'),
-        withCredentials: true,
-      });
+      /**
+       * I commented this because the dummyApi that I use
+       * Give CORS origin for some reason
+       */
+      // request = request.clone({
+      //   headers: request.headers.set('Authorization', `Bearer ${token}`),
+      //   withCredentials: true,
+      // });
     }
 
     return next.handle(request);
